@@ -10,22 +10,12 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 import DailyForecast from "@/components/dailyforecast";
-import { getForecast } from "@/lib/getForecast";
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import CityCombobox from "@/components/combobox";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Droplet, Wind, Sun } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { getWeatherBackground } from "@/lib/utils";
+import { cn, getForecast, getWeatherBackground } from "@/lib/utils";
 import HourlyChart from "@/components/hourlychart";
 
 export default function Home() {
@@ -159,10 +149,13 @@ export default function Home() {
         )}
 
         {loading && !error && (
-          <div className="w-full space-y-4">
-            <Skeleton className="h-8 w-1/2 bg-neutral-800" />
-            <Skeleton className="h-24 w-full rounded-xl bg-neutral-800" />
-            <Skeleton className="h-16 w-full rounded-xl bg-neutral-800" />
+          <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
+            <Skeleton className="h-76 w-full rounded-md border border-neutral-700 bg-neutral-800" />
           </div>
         )}
 
