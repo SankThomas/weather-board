@@ -82,7 +82,7 @@ export default function Home() {
           fetchWeather(currentCoords.lat, currentCoords.lon);
         }
       },
-      10 * 60 * 60 * 1000,
+      60 * 60 * 1000,
     );
 
     return () => clearInterval(interval);
